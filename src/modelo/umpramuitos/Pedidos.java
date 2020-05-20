@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,7 +17,7 @@ public class Pedidos {
 	@Column(nullable = false)
 	private Date data;
 	
-	@OneToMany(mappedBy = "pedido" )
+	@OneToMany(mappedBy = "pedido", fetch = FetchType.EAGER )
 	private List<ItemPedido>itens;
 	
 	

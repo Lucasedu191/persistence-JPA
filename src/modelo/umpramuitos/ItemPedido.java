@@ -1,5 +1,6 @@
 package modelo.umpramuitos;
 
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,7 +15,7 @@ public class ItemPedido {
 	private Long id;
 	@ManyToOne
 	private Pedidos pedido;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Produto produto;
 	private int quantidade;
 	private Double preco;
